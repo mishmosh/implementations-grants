@@ -1,0 +1,14 @@
+
+:root {
+  --highlight: #fb2c07;
+}
+
+main {
+  margin: 4rem auto;
+  max-width: 80ch;
+}
+
+a {
+  color: var(--highlight);
+  text-decoration: none;
+}
