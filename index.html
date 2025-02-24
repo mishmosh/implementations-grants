@@ -10,66 +10,145 @@
   <main>
   <h1>IPFS <br>Implementations <br>Grants</h1>
   <p>
-    The IPFS Implementations Grants program was established in 2022 to advance the development, growth, and impact 
+    The IPFS Implementations Grants program was established in 2022 to advance the development, growth, and impact
     of the InterPlanetary File System (IPFS) project through a focus on developer choice and availability. We provide
-    financial support to projects and teams working on integrations, extensions, and new implementations that make 
+    financial support to projects and teams working on integrations, extensions, and new implementations that make
     IPFS accessible to more developer communities across a variety of languages, platforms, and systems.
   </p>
+
+  <h2>Spring 2025 Request for Proposals: Content-Addressed Data Tools</h2>
+  <p>The IPFS Implementations Fund supports a more open, resilient, and efficient web by funding  implementations of the <a href="https://specs.ipfs.tech/">IPFS protocol</a>. It aims to broaden the reach and impact of the IPFS project by making content addressing and peer-to-peer networking more accessible across different platforms, programming languages, environments, and use cases.</p>
+  <p>Our Utility Grants program supports developers creating essential utilities, libraries, and tooling. Grants of $5,000-25,000 per project aim to fill critical tooling gaps and strengthen the foundations of an open and interoperable web.</p>
+  <p>For the Spring 2025 cycle, we seek proposals from qualified individuals or teams for the following:</p>
+
+  <h3>RFP #2025-01: CAR Archive Explorers and Utilities</h3>
+  <p>The CAR format (Content Addressable aRchives) makes data reliably portable by packaging up content with its cryptographic identifiers. This ensures the same data can be verified and used across different systems and platforms, making it a good building block for “credible exit” and data portability. Typically found in a file with a <code>.car</code> filename extension, you can think of them like TAR files that are designed for storing collections of content addressed data.</p>
+  <p>Originally created as a way to create stable documents from large or dynamic IPLD graphs (including those graphs that populate “virtual directories” of files added to IPFS), CAR files can now be found in IPFS-based systems, Storacha, ATProto, and other open source projects. With growing interest in data independence – moving large datasets between storage providers, backing up personal content from hosted services, and maintaining data integrity across the web – there's a growing need for accessible tools that help people create, inspect, and manage their own CAR files.</p>
+  <p>Currently, there is limited stand-alone tooling for the CAR format. Prior art includes Bluesky’s <a href="https://github.com/bluesky-social/indigo/blob/main/cmd/goat/repo.go">goat</a>, but this is specific to BlueSky-export .car files and not ergonomic to use outside of that context.</p>
+  
+  <p>We are interested in tools that make CAR archives more useful and/or more usable. Command line tools, utility libraries, and browser-based explorers are equally welcome. Enhancements or extensions to existing tools or platforms are especially encouraged.</p>
+
+  <h3>RFP #2025-02: DASL Testing</h3>
+  <p>DASL (Data-Addressed Structures & Links, pronounced "dazzle") is a small set of simple, standard primitives for working with content-addressable resources on today’s or tomorrow’s web. It is a strict subset of IPFS CIDs and IPLD, optimized for simplicity, HTTP, and longevity.</p>
+  <p>The DASL spec was published in December 2024, and is currently supported by <a href="https://dasl.ing/#how">9 implementations or tools</a>. Now, let’s test it. We are interested in proposals with two phases:</p>
+  <ul>
+  <li>First, authoring a set of tests and designing a few happy-path and failure test cases for DASL (specifically its <a href="https://dasl.ing/#spec">CID, dCBOR42, and CAR specs</a>).</li>
+  <li>Second, testing against real-world implementations in approximate conformance and working through spec changes and/or test changes towards a “minor version” that exhausts major corner-cases and ambiguities.</li>
+  </ul>
+  <p>Additional notes:</p>
+  <ul>
+  <li>Applicants should make sure that this works as a loop with the spec to clarify and improve it as needed, rather than slavishly follow it. The DASL authors will be available for discussion and collaboration.</li>
+  <li>Proposals should include a list of implementations (at least one ATProto-based) to test against, to ensure alignment of spec, test suite, and implementations.</li>
+  <li>See <a href="https://github.com/darobin/dasl.ing/issues/25">https://github.com/darobin/dasl.ing/issues/25</a> for prior discussion.</li>
+  </ul>
+
+  <h3>RFP #2025-03: Emerging Data Utilities</h3>
+  <p>Recently, several new utilities and tools have emerged for working with content-addressed data (CIDs, IPLD, DASL). We welcome these new contributions to the content-addressed ecosystem! We are interested in proposals to help these emerging tools improve and mature.</p>
+  <p>The scope of work can range broadly, from technical improvements to docs, code examples, outreach, or education. This RFP is focused on active projects that show evidence of current usage and adoption (for example, more Github stars than your immediate family, a variety of issue creators, a healthy dependency graph).</p>
+
+
+  <h2>Submission Instructions</h2>
+  <h3>Submission Process</h3>
+  <ol>
+  <li>Prepare your proposal according to the requirements outlined below.</li>
+  <li>Submit your proposal by completing <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQXmZ-Iho7EHYwAv-j0RkEwG4xUcQRy0mtWQEyPhl4ld2jTw/viewform?usp=dialog">this form</a> no later than <strong>Sunday, March 30, 2025</strong>.</li>
+  <li>Ensure all team members are available for a potential Q&A call during the specified dates.</li>
+  </ol>
+
+  <p>Thank you for your interest and good luck with your submission! For any questions, please contact <a href="mailto:utility-grants@ipfs.io">utility-grants@ipfs.io</a>.</p>
+
+  <h3>Proposal Requirements</h3>
+  <p>Please prepare a clear and concise proposal (no longer than 2 pages) with the following sections:</p>
+  <ol>
+  <li>Project Overview</li>
+  <li>Technical Design</li>
+  <li>User Feedback and Adoption Plan</li>
+  <li>Schedule and Budget</li>
+  <li>Qualifications of Team, including prior open-source work</li>
+  </ol>
+
+  <h3>Additional Information</h3>
+  <ul>
+  <li>License: Projects must be licensed under the MIT and/or Apache-2.0 licenses.</li>
+  <li>Duration: This program targets projects of 1-3 months. Exceptions will be considered on a case-by-case basis.</li>
+  <li>Project Communications:
+    <ul>
+    <li>Grantees are expected to publish an overview and introduction to their project upon completion. This can be on a personal blog or website, the IPFS Forum, or other public place.</li>
+    <li>Grantees will give a brief presentation at a virtual showcase in June. Depending on your proposed timeline, projects are not required to be completed at this time, but should have enough progress for a meaningful presentation.</li>
+    </ul></li>
+  <li>Maintenance Grant: An additional grant of 10% of the original award will be available to support a 12-month period of basic maintenance. This can include any activity to keep your project healthy, including but not limited to bug fixes, minor improvements, community support, responses to Github issues or PRs, docs, examples, and other educational content.</li>
+  </ul>
+
+  <h3>Important Dates</h3>
+  <ul>
+  <li>Informational Sessions (Virtual): March 12 & 26, 2025</li>
+  <li>Submission Deadline: March 30, 2025</li>
+  <li>Finalist Notification: April 7, 2025</li>
+  <li>Review Period: April 7 - April 21, 2025</li>
+  <li>Q&A Calls with Finalists: April 17 - April 20, 2025</li>
+  <li>Grantees Acceptance Notification: April 23, 2025</li>
+  <li>Grantee Presentations (Virtual): June 2025 (exact date TBA)</li>
+  </ul>
+
+
+
+
+
   <h2>Past awardees, in alphabetic order:</h2>
   <ul>
     <li>
-      <a href="https://www.3studio.online/">3S Studio</a>, for 
+      <a href="https://www.3studio.online/">3S Studio</a>, for
       <a href="https://blog.ipfs.tech/2022-11-15-3s-studio/">IPFS plugins for the Unreal and Unity gaming engines</a>.
     </li>
     <li>
-      <a href="https://brave.com/">Brave Browser</a>, for 
+      <a href="https://brave.com/">Brave Browser</a>, for
       <a href="https://brave.com/blog/nft-pinning/">automatic NFT backups</a> to a local IPFS node.
     </li>
     <li>
-      <a href="https://www.igalia.com/">Igalia</a>, for 
+      <a href="https://www.igalia.com/">Igalia</a>, for
       <a href="https://blog.ipfs.tech/14-11-2022-igalia-chromium/">refactoring Chrome to support non-HTTP protocols</a>.
-      and 
+      and
       <a href="https://blog.ipfs.tech/2021-01-15-ipfs-and-igalia-collaborate-on-dweb-in-browsers/">other</a>
       <a href="https://blogs.igalia.com/jfernandez/2023/06/20/secure-curves-in-the-web-cryptography-api/">improvements</a>
       across 3 major browser engines for future IPFS compatibility
     </li>
     <li>
-      <a href="https://fission.codes/">Fission</a>, for the 
+      <a href="https://fission.codes/">Fission</a>, for the
       <a href="https://fission.codes/blog/ipvm-computation-ipfs/">IPVM content-addressed computing</a>
       protocol and implementation
     </li>
     <li>
-      <a href="https://littlebearlabs.io/">Little Bear Labs</a>, for 
+      <a href="https://littlebearlabs.io/">Little Bear Labs</a>, for
       <a href="https://blog.ipfs.tech/2023-05-multigateway-chromium-client/">native support for verified IPFS requests in Chromium</a>.
     </li>
     <li>
-      <a href="https://n0.computer/">Number Zero</a>, for <a href="https://iroh.computer/">Iroh</a>, a new 
+      <a href="https://n0.computer/">Number Zero</a>, for <a href="https://iroh.computer/">Iroh</a>, a new
       IPFS-based toolkit for building distributed systems
     </li>
     <li>
-      <a href="https://github.com/Peergos">Peergos</a>, for 
-      <a href="https://github.com/Peergos/nabu">Nabu</a>, a ground-up implementation of IPFS in Java and improvements to 
+      <a href="https://github.com/Peergos">Peergos</a>, for
+      <a href="https://github.com/Peergos/nabu">Nabu</a>, a ground-up implementation of IPFS in Java and improvements to
       <a href="https://github.com/libp2p/jvm-libp2p">jvm-libp2p</a>
     </li>
   </ul>
   <h2>How to Apply</h2>
   <p>
-    Make a copy of the 
-    <a href="https://docs.google.com/document/d/1ca71n6iF4qxmNjF6ikBIlu8poXTvHvbs8DASHPEmDr0/edit#heading%3Dh.qu9lauf6phdl">application template</a>, 
-    edit it with your proposal details, and send it to 
-    <a href="mailto:implementations-grants@ipfs.io?subject=IPFS%20Implementations%20grant%20proposal%20-%20%5BPROJECT%20NAME%5D">implementations-grants@ipfs.io</a>. 
-    Questions and informal inquiries are also welcome. You can expect an initial response within 2 weeks. 
+    Make a copy of the
+    <a href="https://docs.google.com/document/d/1ca71n6iF4qxmNjF6ikBIlu8poXTvHvbs8DASHPEmDr0/edit#heading%3Dh.qu9lauf6phdl">application template</a>,
+    edit it with your proposal details, and send it to
+    <a href="mailto:implementations-grants@ipfs.io?subject=IPFS%20Implementations%20grant%20proposal%20-%20%5BPROJECT%20NAME%5D">implementations-grants@ipfs.io</a>.
+    Questions and informal inquiries are also welcome. You can expect an initial response within 2 weeks.
   </p>
   <h2>How to Contribute</h2>
   <p>
-    This program is supported by Protocol Labs (2022-2025) and the Filecoin Foundation (2022). If your fund or foundation aims 
-    to boost open-source IPFS adoption, consider 
-    <a href="mailto:implementations-grants@ipfs.io?subject=Contributing%20to%20IPFS%20Implementations%20funding">joining as a funder</a>. 
+    This program is supported by Protocol Labs (2022-2025) and the Filecoin Foundation (2022). If your fund or foundation aims
+    to boost open-source IPFS adoption, consider
+    <a href="mailto:implementations-grants@ipfs.io?subject=Contributing%20to%20IPFS%20Implementations%20funding">joining as a funder</a>.
   </p>
   <h2>About</h2>
   <p>
     The IPFS Implementations Grants program is a cell of the <a href="https://openimpact.foundation/">Open Impact Foundation</a>,
-    a Liechtenstein charitable foundation. Our advisors are Michelle Lee, Juan Benet, and Dietrich Ayala (emeritus). 
+    a Liechtenstein charitable foundation. Our advisors are Michelle Lee, Juan Benet, and Dietrich Ayala (emeritus).
     Thank you to Addie Wagenknecht, Matt Frehlich, and Patrick Kim.
   </p>
   </main>
