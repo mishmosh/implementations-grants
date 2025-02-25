@@ -24,15 +24,9 @@ body {
 }
 main {
   margin: 4rem auto;
-  max-width: 80ch;
+  max-width: 960px;
 }
 h1 {
-  /* font-family: var(--heading-family);
-  font-weight: 700;
-  font-size: 3.75rem;
-  line-height: 1;
-  margin: 0;
-  padding: 0; */
   background: var(--highlight);
   color: white;
   font-family: var(--heading-family);
@@ -53,4 +47,16 @@ h2 + p, h3 + p, h2 + ul, h3 + ul {
 a {
   color: var(--highlight);
   text-decoration: none;
+}
+@media screen and (max-width: 960px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  body {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  main {
+    margin: 1rem;
+  }
 }
