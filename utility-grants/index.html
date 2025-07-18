@@ -26,76 +26,51 @@
     IPFS accessible to more developer communities across a variety of languages, platforms, and systems.
   </p>
 
-  <h2>Spring 2025 Request for Proposals: Content-Addressed Data Tools</h2>
+  <h2>Summer 2025 Request for Proposals: Content-Addressed Data Tools</h2>
   <p>The IPFS Implementations Fund supports a more open, resilient, and efficient web by funding implementations of the <a href="https://specs.ipfs.tech/">IPFS protocol</a>. It aims to broaden the reach and impact of the IPFS project by making content addressing and peer-to-peer networking more accessible across different platforms, programming languages, environments, and use cases.</p>
   <p>Our Utility Grants program supports developers creating essential utilities, libraries, and tooling. Grants of $5,000-25,000 per project aim to fill critical tooling gaps and strengthen the foundations of an open and interoperable web.</p>
-  <p>For the Spring 2025 cycle, we seek proposals from qualified individuals or teams for the following:</p>
+  <p>For the Summer 2025 cycle, we seek proposals from qualified individuals or teams for the following:</p>
 
-  <h3>RFP #2025-01: CAR Archive Explorers and Utilities</h3>
-  <p>The CAR format (Content Addressable aRchives) makes data reliably portable by packaging up content with its cryptographic identifiers. This ensures the same data can be verified and used across different systems and platforms, making it a good building block for “credible exit” and data portability. Typically found in a file with a <code>.car</code> filename extension, you can think of them like TAR files that are designed for storing collections of content addressed data.</p>
-  <p>Originally created as a way to create stable documents from large or dynamic IPLD graphs (including those graphs that populate “virtual directories” of files added to IPFS), CAR files can now be found in IPFS-based systems, Storacha, ATProto, and other open source projects. With growing interest in data independence – moving large datasets between storage providers, backing up personal content from hosted services, and maintaining data integrity across the web – there's a growing need for accessible tools that help people create, inspect, and manage their own CAR files.</p>
-  <p>Currently, there is limited stand-alone tooling for the CAR format. Prior art includes <a href="https://docs.ipfs.tech/reference/kubo/cli/#ipfs-dag-import">kubo</a>'s <code>dag import</code> and <code></code>dag export</code> CLIs, <a href="https://github.com/hsanjuan/caribdis">caribdis</a>, and Bluesky’s <a href="https://github.com/bluesky-social/indigo/blob/main/cmd/goat/repo.go">goat</a>, but they are mostly embedded within larger app-specific libraries and not ergonomic to use outside of that context. Standalone tools include <a href="https://www.npmjs.com/package/ipfs-car">ipfs-car</a> and <a href="https://github.com/ipld/go-car">go-car</a>.</p>
+  <h3>RFP #2025-04: Lean and Performant Libraries</h3>
+  <p>Now that a <a href="https://dasl.ing/">DASL</a> test suite is in place, we are seeking proposals for lean and performant implementations in commonly used languages such as JavaScript/TypeScript, Python, Go, Rust, Java, C, C#, or others with demonstrated developer adoption. These libraries should prioritize minimal dependencies, fast execution, and ergonomic APIs that make DASL accessible to developers who may be new to content-addressed systems. Implementations should include core DASL functionality including CID handling, dCBOR42 encoding/decoding, and basic CAR file operations. They may also include additional capabilities such as range requests.</p>
 
-  <p>We are interested in tools that make CAR archives more useful and/or more usable. Command line tools, utility libraries, and browser-based explorers are equally welcome. Enhancements or extensions to existing tools or platforms are especially encouraged.</p>
+  <p></p>Successful proposals will demonstrate clear performance benchmarks, consideration for multiple sizes and configurations of files and folders, minimal memory footprint, and straightforward integration patterns. We're particularly interested in libraries that can serve as drop-in components for existing web applications, API services, or data processing pipelines in large-scale production environments. Projects should include documentation and usage examples.</p> 
 
-  <h3>RFP #2025-02: DASL Testing</h3>
-  <p>DASL (Data-Addressed Structures &amp; Links, pronounced "dazzle") is a small set of simple, standard primitives for working with content-addressable resources on today’s or tomorrow’s web. It is a strict subset of IPFS CIDs and IPLD, optimized for simplicity, HTTP, and longevity.</p>
-  <p>The DASL spec was published in December 2024, and is currently supported by <a href="https://dasl.ing/#how">9 implementations or tools</a>. Now, let’s test it. We are interested in proposals with two phases:</p>
-  <ul>
-  <li>First, authoring a set of tests and designing a few happy-path and failure test cases for DASL (specifically its <a href="https://dasl.ing/#spec">CID, dCBOR42, and CAR specs</a>).</li>
-  <li>Second, testing against real-world implementations in approximate conformance and working through spec changes and/or test changes towards a “minor version” that exhausts major corner-cases and ambiguities.</li>
-  </ul>
   <p>Additional notes:</p>
   <ul>
   <li>Applicants should make sure that this works as a loop with the spec to clarify and improve it as needed, rather than slavishly follow it. The DASL authors will be available for discussion and collaboration.</li>
-  <li>Proposals should include a list of implementations (at least one ATProto-based) to test against, to ensure alignment of spec, test suite, and implementations.</li>
-  <li>See <a href="https://github.com/darobin/dasl.ing/issues/25">https://github.com/darobin/dasl.ing/issues/25</a> for prior discussion.</li>
+  <li>Projects should demonstrate compliance with the <a href="https://github.com/hyphacoop/dasl-testing">DASL testing suite</a></li>.
+  <li>We expect to select proposals for a small number of the listed languages, and rely on language bindings for the rest.</li>
+  <li>Collaboration and benchmarking with production systems is strongly preferred.</li>
   </ul>
 
-  <h3>RFP #2025-03: Improving Data Utilities</h3>
-  <p>Recently, several new utilities, libraries, and tools have emerged for working with content-addressed data (CIDs, IPLD, DASL). We welcome these new contributions to the content-addressed ecosystem! We are interested in proposals to improve both longtime and emerging utilities.</p>
-  <p>The scope of work can range broadly, from technical improvements to docs, code examples, outreach, or education. This RFP is focused on active projects that show evidence of current usage and adoption (for example, Github stars, a variety of issue creators, a healthy dependency graph).</p>
-
-  <h2>How To Apply</h2>
-  <h3>Submission Process</h3>
-  <ol>
-  <li>Prepare your proposal document according to the requirements outlined below.</li>
-  <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQXmZ-Iho7EHYwAv-j0RkEwG4xUcQRy0mtWQEyPhl4ld2jTw/viewform?usp=dialog">Submit your proposal</a> no later than <strong>Sunday, March 30, 2025</strong>.</li>
-  <li>Ensure all team members are available for a potential Q&amp;A call during the specified dates.</li>
-  </ol>
-
   <h3>Proposal Document</h3>
-  <p>Please prepare a clear and concise proposal (no longer than 2 pages) with the following sections:</p>
+  <p>Please prepare a clear and concise proposal (no longer than 2 pages) with the following sections and submit it to <a href="mailto:utility-grants@ipfs.io">utility-grants@ipfs.io</a>:</p>
   <ol>
   <li>Project Overview</li>
   <li>Technical Design</li>
   <li>User Feedback and Adoption Plan</li>
   <li>Schedule and Budget</li>
-  <li>Qualifications of Team, including prior open-source work</li>
+  <li>Qualifications of Team, including prior experience with content-addressed systems and performance</li>
   </ol>
 
   <h3>Additional Information</h3>
   <ul>
-  <li>License: Projects must be licensed under the MIT and/or Apache-2.0 licenses.</li>
+  <li>License: Projects must be licensed under the MIT and/or Apache-2.0 licenses. </li>
   <li>Duration: This program targets projects of 1-3 months. Exceptions will be considered on a case-by-case basis.</li>
   <li>Contributions to existing projects:</li> If you are proposing to improve an existing project of which you are not a maintainer, please check with the maintainer(s) first. Your proposal should link to an issue or other artifact showing that you have discussed the proposed change with the maintainer, incorporated any feedback, and that they support and will be available to review your PRs.
   <li>Project Communications:
     <ul>
     <li>Grantees are expected to publish an overview and introduction to their project upon completion. This can be on a personal blog or website, the IPFS Forum, or other public place.</li>
-    <li>Grantees will give a brief presentation at a virtual showcase in June. Depending on your proposed timeline, projects are not required to be completed at this time, but should have enough progress for a meaningful presentation.</li>
+    <li>Grantees will give a brief presentation at a virtual showcase. Depending on your proposed timeline, projects are not required to be completed at this time, but should have enough progress for a meaningful presentation.</li>
     </ul></li>
-  <li>Maintenance Grant: An additional grant of 10% of the original award will be available to support a 12-month period of basic maintenance. This can include any activity to keep your project healthy, including but not limited to bug fixes, minor improvements, community support, responses to Github issues or PRs, docs, examples, and other educational content.</li>
   </ul>
 
   <h3>Important Dates</h3>
   <ul>
-  <li>Informational Sessions (Virtual): <a href="https://lu.ma/14t7w2oy">March 12</a> &amp; <a href="https://lu.ma/gwpygczs">March 26</a>, 2025</li>
-  <li>Submission Deadline: March 30, 2025</li>
-  <li>Finalist Notification: April 7, 2025</li>
-  <li>Review Period: April 7 - April 21, 2025</li>
-  <li>Q&amp;A Calls with Finalists: April 17 - April 20, 2025</li>
-  <li>Grantees Acceptance Notification: April 23, 2025</li>
-  <li>Grantee Presentations (Virtual): June 2025 (exact date TBA)</li>
+  <li>Proposals will be considered on a rolling basis. </li>
+  <li>Submission Deadline: August 31, 2025</li>
+  <li>Grantee Presentations (Virtual): Aug-Sept 2025 (exact date TBA)</li>
   </ul>
 
   <p>Thank you for your interest and good luck with your submission! For any questions, please contact <a href="mailto:utility-grants@ipfs.io">utility-grants@ipfs.io</a>.</p>
